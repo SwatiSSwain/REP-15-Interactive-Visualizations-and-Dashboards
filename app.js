@@ -1,7 +1,7 @@
 // Use D3 fetch to read the JSON file
 //Read samples.json & Display the sample metadata
 function getMetaData(sample) {
-    d3.json("../../samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
     
     //Read metadata from json
     let sampleData = data.metadata;
@@ -31,7 +31,7 @@ function getMetaData(sample) {
 // Function to build horizontal bar graph and bubble graph
 
 function buildPlots(sample){
-    d3.json("../../samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         
         //Read samples from json
         let sampleData = data.samples;
@@ -116,7 +116,7 @@ function init() {
     let selector = d3.select("#selDataset");
   
     // Use the list of sample names to populate the select options
-    d3.json("../../samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         let sampleNames = data.names;
       Object.entries(sampleNames).forEach((sample) => {
         selector
